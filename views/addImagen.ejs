@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Imagen</title>
+	<link rel="icon" type="image/x-icon" href="img/limpieza.png" />
+	
+	<style type="text/css">
+		body{
+			background-image: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);
+	background-size:cover;
+	background-attachment: fixed;
+    }
+    form{
+    	display: flex;
+    	flex-direction: column;
+    	margin:80px auto;
+    	width:40%;
+    	background:rbg(0,0,0,.8);
+    }
+    input{
+    	padding:10px;
+    	margin:10px;
+    }
+    label{
+    	font-size: 30px;
+    	font-weight: bold;
+    }
+.andri{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+	
+#botones{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+}
+	</style>
+
+</head>
+<body>
+
+
+
+ <div class="andri"><h1>Agregar Imagen</h1></div>
+
+<div id='divDestacado'>
+	
+<form action="/addImagen/<%=modelo.producto_id%>" method="post" enctype="multipart/form-data">
+	
+	<label for='imagen'>Imagen</label>
+	
+	<input type="file" name="img" id="img" placeholder="Imagen">
+  
+	<label for="destacado">Destacado</label>
+	<select id='destacado' name="destacado">
+		<option value='1'>Principal</option>
+		<option value='0'>No principal</option>
+	</select>
+
+	<input type="submit" value="add" id="destacado">
+	<div id='botones'>
+		<a href='/productos'>Volver</a>
+	</div>
+</form>
+</div>
+
+</body>
+
+</html>
